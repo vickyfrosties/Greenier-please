@@ -1,0 +1,51 @@
+.divcontainer {
+    padding: 5rem;
+}
+.subtitle {
+    font-size: 35px;
+    padding-bottom: 1rem;
+}
+
+.subjectname {
+    width: 10%;
+    left: 0%;
+    font-size: 40px;
+}
+
+.firstsection {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 1.5rem;
+    height: 100%;
+
+    .membercards {
+        padding: 10px;
+        width: 20%;
+        background-color: var(--text-color);
+        border-radius: 5px;
+
+        h3,
+        p {
+            border-radius: 20%;
+            background-color: var(--text-color);
+            color: var(--background);
+        }
+
+        .socialnetwork {
+            background-color: var(--text-color);
+
+            img {
+                background-color: var(--text-color);
+            }
+
+            a {
+                background-color: var(--text-color);
+            }
+        }
+    }
+
+}

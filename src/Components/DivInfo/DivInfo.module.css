@@ -1,0 +1,28 @@
+.infodiv {
+    border: 2px solid var(--text-color);
+    min-width: 350px;
+    border-radius: 1em;
+    padding: 1rem;
+    min-height: 700px;
+}
+.divcontainer {
+    padding-top: 5rem;
+    justify-content: space-around;
+    gap: 2rem;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sectioninfo {
+    /* border: 3px solid blue; */
+    display: flex;
+    flex-direction: row nowrap;
+  
+}
+
+.infotitle {
+    padding: 2em;
+    border-radius: 1em;
+    background-color: var(--text-color);
+    color: var(--div-border);
+}
