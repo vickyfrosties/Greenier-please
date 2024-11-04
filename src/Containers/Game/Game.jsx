@@ -49,10 +49,23 @@ const Game = () => {
     };
   }, []);
 
+  // Constante pour afficher la div à droite du jeu
+  const GameInfos = ( { projectInfo, className } ) => {
+    return (
+      <div className={className}>
+        <h2>{projectInfo.title}</h2>
+        <p>{projectInfo.information}</p>
+        <a href={projectInfo.link} target="_blank" rel="noopener noreferrer">Source</a>
+      </div>
+    )
+  }
+
+  // Réinitialisation des variables globales
   const resetGameVariables = () => {
-    // Réinitialisation des variables globales
     currentIndex = 0;
-    data = null; // À charger à nouveau dans preload
+
+    // À charger à nouveau dans preload
+    data = null;
     compteur = 0;
     makeclosup = false;
     didyouwin = undefined;
@@ -70,44 +83,36 @@ const Game = () => {
     closeup = null;
     closeupText = null;
     accept = null;
-    clickCountStorage(0); // Réinitialiser le stockage local
   };
 
   let currentIndex = 0, data;
   let compteur = 0, makeclosup = false, didyouwin;
   let countDown, countDownText, countDownTimer;
-  let npc, game, thermometer, ingamewindow, operatorText, projectTitleText;
+  let npc, thermometer, ingamewindow, operatorText, projectTitleText;
   let paper1, paper2, paper3, closeup, closeupText, accept;
   const STARTCOUNTDOWN = 45;
   
   let winscreen, lostscreen;
   let index;
   
-  let clickCountStorage = (x) => {
-    localStorage.setItem('clickCountStorage', x);
-    console.log('x de fct clickCountStorage =', x);
-  };
-  
-  // Définition des fonctions Phaser
+  // Définition des fonctions Phaser ./Game.module.css
   function preload() {
-    this.load.image('background', './assets/BG.png');
-    this.load.image('buttonaccept', './assets/acceptbutton.png');
-    this.load.json('gameData', './GAME/propositions.json');
-    this.load.image('paper', './assets/Paper.png');
-    this.load.image('closeup', './assets/postit.png');
-    this.load.image('winscreen', './assets/WinScreen.png');
-    this.load.image('lostscreen', './assets/GameOverScreen.png');
-    this.load.image('firstthermomether', './assets/neutralThermo.png');
-    this.load.image('seccondthermomether', './assets/hotThermo.png');
-    this.load.image('thirdthermomether', './assets/coldThermo.png');
-    this.load.image('neutralwindow', './assets/NeutralWindow.png');
-    this.load.image('elli', './assets/PNG.png');
-    this.load.image('thomas', './assets/NPC2.png');
-    this.load.image('jelly', './assets/jelly.png');
-    this.load.image('nicole', './assets/gizmoKaren_jellyfisher.png');
-    this.load.image('badwindow', './assets/dystopic_world.png');
-  
-    clickCountStorage(0);
+    this.load.image('background', './src/assets/Images/BG.png');
+    this.load.image('buttonaccept', './src/assets/Images/acceptbutton.png');
+    this.load.json('gameData', './src/assets/propositions.json');
+    this.load.image('paper', './src/assets/Images/Paper.png');
+    this.load.image('closeup', './src/assets/Images/postit.png');
+    this.load.image('winscreen', './src/assets/Images/WinScreen.png');
+    this.load.image('lostscreen', './src/assets/Images/GameOverScreen.png');
+    this.load.image('firstthermomether', './src/assets/Images/neutralThermo.png');
+    this.load.image('seccondthermomether', './src/assets/Images/hotThermo.png');
+    this.load.image('thirdthermomether', './src/assets/Images/coldThermo.png');
+    this.load.image('neutralwindow', './src/assets/Images/NeutralWindow.png');
+    this.load.image('elli', './src/assets/Images/PNG.png');
+    this.load.image('thomas', './src/assets/Images/NPC2.png');
+    this.load.image('jelly', './src/assets/Images/jelly.png');
+    this.load.image('nicole', './src/assets/Images/gizmoKaren_jellyfisher.png');
+    this.load.image('badwindow', './src/assets/Images/dystopic_world.png');
   }
   
   // Initialisation des éléments de la scène
@@ -137,7 +142,9 @@ const Game = () => {
   // Mise à jour de la scène
   function update() {
     npc.setVisible(false);
-    displayNPC.bind(this)();  // Utilisation de .bind(this) pour forcer le contexte correct
+
+    // Utilisation de .bind(this) pour forcer le contexte correct
+    displayNPC.bind(this)();
     displayThermometer();
     displayEndScreens();
   }
@@ -153,6 +160,7 @@ const Game = () => {
   function selectProposal(propalIndex) {
     index = propalIndex;
     const proposition = data.projets[currentIndex].proposal[propalIndex];
+    
     console.log(proposition);
   
     // Affiche le closeup et le texte correspondant
@@ -313,11 +321,13 @@ const Game = () => {
     let currentProjet = data.projets[currentIndex];
     if (index == currentProjet.goodProposal) {
       console.log("Bonne réponse !");
+
       compteur -= 1;
       localStorage.setItem('responseStatus', 'correct');
       
     } else {
       console.log("Mauvaise réponse, essayez encore !");
+
       compteur += 1;
       localStorage.setItem('responseStatus', 'incorrect');
     }
@@ -327,32 +337,15 @@ const Game = () => {
   }
   
   function nextproposal() {
-    // Récupération de la valeur de clickCountStorage
-    const currentClickCount = parseInt(localStorage.getItem('clickCountStorage')) || 0;
-    
     // Sinon, passer au projet suivant
     currentIndex += 1;
     afficherProjetEtOperateur.call(this);
-  
-    // Mettre à jour clickCountStorage
-    clickCountStorage(currentClickCount + 1);
   }  
 
   return (
     <div>
       <div id="toto" className={styles.divgame} ref={gameContainerRef}>
-        <GameInfos projectInfo={projectInfo} />
-      </div>
-      <div className={styles.projectInfo}>
-        {projectInfo.title && (
-          <div>
-            <h2>Titre du projet : {projectInfo.title}</h2>
-            <p>Propositions : {projectInfo.proposal && projectInfo.proposal.join(', ')}</p>
-            <p>Proposition correcte : {projectInfo.proposal && projectInfo.proposal[projectInfo.goodProposal]}</p>
-            <p>Information : {projectInfo.information}</p>
-            <p>Lien : <a href={projectInfo.link} target="_blank" rel="noopener noreferrer">{projectInfo.link}</a></p>
-          </div>
-        )}
+        <GameInfos projectInfo={projectInfo} className={styles.projectInfo} />
       </div>
     </div>
   );

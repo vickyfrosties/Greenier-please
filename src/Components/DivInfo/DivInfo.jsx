@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import data from '../../../GAME/propositions.json';
+import { useState } from 'react';
+import data from '../../assets/propositions.json';
 import styles from './DivInfo.module.css';
 const DivInfo = () => {
   //todo : récupérer les infos du json
