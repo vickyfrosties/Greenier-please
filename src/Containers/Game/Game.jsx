@@ -113,6 +113,10 @@ const Game = () => {
     setupProposalPapers(this);
     setupProjectAndOperatorText(this);
     setupCountDownTimer(this);
+
+    // oublie de la création de ces items
+    winscreen = this.add.image(100, 100, 'winscreen').setOrigin(0, 0).setVisible(false).setDepth(2);
+    lostscreen = this.add.image(100, 100, 'lostscreen').setOrigin(0, 0).setVisible(false).setDepth(2);
   
     afficherProjetEtOperateur(); // Appelez ici
   
@@ -319,28 +323,10 @@ const Game = () => {
   function nextproposal() {
     // Récupération de la valeur de clickCountStorage
     const currentClickCount = parseInt(localStorage.getItem('clickCountStorage')) || 0;
-  
-    // Vérifier si clickCountStorage est égal à 1
-    if (currentClickCount === 1) {
-      // Afficher les informations du premier niveau
-      const projet = data.projets[0]; // Récupérer le premier projet
-      console.log("Titre du projet :", projet.title);
-      console.log("Propositions :", projet.proposal);
-      console.log("Proposition correcte :", projet.proposal[projet.goodProposal]);
-      console.log("Information :", projet.information);
-      console.log("Lien :", projet.link);
-      
-      // Vous pouvez également mettre à jour l'interface utilisateur ici si nécessaire
-      operatorText.setText('Opérateur:\n' + data.operators[currentIndex]);
-      projectTitleText.setText('Projet:\n' + projet.title);
-      // closeupText.setText(projet.information); // Afficher l'information
-      closeup.setVisible(true); // Afficher le closeup
-      closeupText.setVisible(true);
-    } else {
-      // Sinon, passer au projet suivant
-      currentIndex += 1;
-      afficherProjetEtOperateur.call(this);
-    }
+    
+    // Sinon, passer au projet suivant
+    currentIndex += 1;
+    afficherProjetEtOperateur.call(this);
   
     // Mettre à jour clickCountStorage
     clickCountStorage(currentClickCount + 1);
