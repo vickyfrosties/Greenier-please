@@ -2,6 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import Phaser from 'phaser';
 import styles from './Game.module.css';
 
+const GameInfos = ({projectInfo}) => {
+  return (
+    <div>{projectInfo.title}</div>
+  )
+}
+
 const Game = () => {
   const gameContainerRef = useRef(null);
   const [projectInfo, setProjectInfo] = useState({
@@ -334,7 +340,9 @@ const Game = () => {
 
   return (
     <div>
-      <div id="toto" className={styles.divgame} ref={gameContainerRef}></div>
+      <div id="toto" className={styles.divgame} ref={gameContainerRef}>
+        <GameInfos projectInfo={projectInfo} />
+      </div>
       <div className={styles.projectInfo}>
         {projectInfo.title && (
           <div>
