@@ -28,7 +28,7 @@ const Index = () => {
         </div>
 
         <Link to='/game' className={styles.btnplay}>
-          <img src='/assets/PlayButton.png' alt='Button Play Game' />
+          <img src='./src/assets/Images/PlayButton.png' alt='Button Play Game' />
         </Link>
       </section>
     </>

@@ -108,11 +108,12 @@ const Game = () => {
     this.load.image('seccondthermomether', './src/assets/Images/hotThermo.png');
     this.load.image('thirdthermomether', './src/assets/Images/coldThermo.png');
     this.load.image('neutralwindow', './src/assets/Images/NeutralWindow.png');
-    this.load.image('elli', './src/assets/Images/PNG.png');
+    this.load.image('ellis', './src/assets/Images/PNG.png');
     this.load.image('thomas', './src/assets/Images/NPC2.png');
     this.load.image('jelly', './src/assets/Images/jelly.png');
     this.load.image('nicole', './src/assets/Images/gizmoKaren_jellyfisher.png');
     this.load.image('badwindow', './src/assets/Images/dystopic_world.png');
+    this.load.image('goodwindow', './src/assets/Images/goodwindow.png');
   }
   
   // Initialisation des éléments de la scène
@@ -205,8 +206,8 @@ const Game = () => {
   }
   
   function setupNPC(scene) {
-    const npcs = ['elli', 'thomas', 'jelly', 'nicole'];
-    npc = scene.add.image(50, 125, npcs[currentIndex]).setOrigin(0, 0).setScale(0.8);
+    const npcs = ['ellis', 'thomas', 'jelly', 'nicole'];
+    npc = scene.add.image(50, 125, npcs[currentIndex]).setOrigin(0, 0).setScale(0.5);
   }
   
   function setupProjectAndOperatorText(scene) {
@@ -233,17 +234,39 @@ const Game = () => {
   }
   
   function displayNPC() {
-    const npcs = ['elli', 'thomas', 'jelly', 'nicole'];
-    npc = this.add.image(50, 125, npcs[currentIndex]).setOrigin(0, 0).setScale(0.8);
+    const npcs = ['ellis', 'thomas', 'jelly', 'nicole'];
+    const npcName = npcs[currentIndex];
+    
+    // Supprime l'ancien NPC, s'il existe
+    if (npc) npc.destroy();
+    
+    // Applique une échelle spécifique pour chaque NPC
+    let scale = 0.8;
+    let x = 50;
+    let y = 125;
+    if (npcName === 'nicole') {
+      scale = 2;
+      x = 25;
+      y = 150;
+    } else if (npcName === 'jelly') {
+      scale = 1;
+      x = 25;
+      y = 150;
+    }
+  
+    npc = this.add.image(x, y, npcName).setOrigin(0, 0).setScale(scale);
   }
   
   function displayThermometer() {
     if (compteur < 0) {
       thermometer.setTexture('thirdthermomether');
+      ingamewindow.setTexture('goodwindow');
     } else if (compteur > 0) {
       thermometer.setTexture('seccondthermomether');
+      ingamewindow.setTexture('badwindow');
     } else {
       thermometer.setTexture('firstthermomether');
+      ingamewindow.setTexture('neutralwindow');
     }
   }
   
@@ -276,8 +299,8 @@ const Game = () => {
       console.log("Opérateur: " + currentOperateur);
       console.log("Projet: " + currentProjet.title);
   
-      operatorText.setText('Opérateur:\n' + currentOperateur);
-      projectTitleText.setText('Projet:\n' + currentProjet.title);
+      operatorText.setText('Operator:\n' + currentOperateur);
+      projectTitleText.setText('Project:\n' + '"' + currentProjet.title + '"');
   
       if (currentProjet.title === "What is the main goal of Green IT?") {
         // Mettez à jour projectInfo avec les informations correspondantes

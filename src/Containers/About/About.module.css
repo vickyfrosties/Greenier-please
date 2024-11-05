@@ -1,6 +1,7 @@
 .divcontainer {
-    padding: 5rem;
+    padding: 5rem 0;
 }
+
 .subtitle {
     font-size: 35px;
     padding-bottom: 1rem;
@@ -16,7 +17,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
     justify-content: space-around;
     margin: auto;
     margin-top: 1.5rem;
@@ -28,7 +29,13 @@
         background-color: var(--text-color);
         border-radius: 5px;
 
-        h3,
+        .profilImage {
+            width: 50%;
+        }
+        .ph4{
+            margin: 1rem 0;
+        }
+        h3, h4, h5,
         p {
             border-radius: 20%;
             background-color: var(--text-color);
@@ -48,4 +55,7 @@
         }
     }
 
+    footer{
+        margin-bottom: 50px;
+    }
 }
