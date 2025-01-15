@@ -41,21 +41,28 @@ const DivInfo = () => {
   return (
     <>
       {/* <h2 className={styles.subjectname}>Information</h2> */}
-      <div className={styles.divcontainer}>
-        {projects.map((projet, index) => {
-          return (
-            <section className={styles.sectioninfo}>
-              <div key={'projet' + index} className={styles.infodiv}>
-                <h3 className={styles.infotitle}>
-                  Read more about "{projet.title}"
-                </h3>
-                <p>{projet.information}</p>
-                <a href={projet.link}>See source</a>
-              </div>
-            </section>
-          );
-        })}
-      </div>
+      <section className={styles.divinfo_container}>
+
+        <div className={styles.divcontainer}>
+          {projects.map((projet, index) => {
+            return (
+              <section key={index} className={styles.sectioninfo}>
+                <div className={styles.infodiv}>
+                  <h3 className={styles.infotitle}>
+                    Read more about "{projet.title}"
+                  </h3>
+                  <p>{projet.information}</p>
+                  <a href={projet.link} target="blank">
+                    <button className={styles.link_btn}>See source</button>
+                  </a>
+                </div>
+              </section>
+            );
+          })}
+        </div>
+
+      </section>
+
     </>
   );
 };
