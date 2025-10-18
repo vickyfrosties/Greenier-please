@@ -105,22 +105,22 @@ const Game = () => {
 
   // Définition des fonctions Phaser ./Game.module.css
   function preload() {
-    this.load.image("background", "/assets/Images/BG.png");
-    this.load.image("buttonaccept", "/assets/Images/AcceptButton.png");
+    this.load.image("background", "/assets/Images/backgroun.png");
+    this.load.image("buttonaccept", "/assets/Images/accept-button.png");
     this.load.json("gameData", "/assets/propositions.json");
-    this.load.image("paper", "/assets/Images/Paper.png");
+    this.load.image("paper", "/assets/Images/paper.png");
     this.load.image("closeup", "/assets/Images/postit.png");
-    this.load.image("winscreen", "/assets/Images/WinScreen.png");
-    this.load.image("lostscreen", "/assets/Images/GameOverScreen.png");
-    this.load.image("firstthermomether", "/assets/Images/neutralThermo.png");
-    this.load.image("seccondthermomether", "/assets/Images/hotThermo.png");
-    this.load.image("thirdthermomether", "/assets/Images/coldThermo.png");
-    this.load.image("neutralwindow", "/assets/Images/NeutralWindow.png");
-    this.load.image("ellis", "/assets/Images/PNG.png");
-    this.load.image("thomas", "/assets/Images/NPC2.png");
-    this.load.image("jelly", "/assets/Images/Jelly.png");
-    this.load.image("nicole", "/assets/Images/gizmoKaren_jellyfisher.png");
-    this.load.image("badwindow", "/assets/Images/dystopic_world.png");
+    this.load.image("winscreen", "/assets/Images/win-screen.png");
+    this.load.image("lostscreen", "/assets/Images/game-over-screen.png");
+    this.load.image("firstthermomether", "/assets/Images/neutral-thermo.png");
+    this.load.image("seccondthermomether", "/assets/Images/hot-thermo.png");
+    this.load.image("thirdthermomether", "/assets/Images/cold-thermo.png");
+    this.load.image("neutralwindow", "/assets/Images/neutral-window.png");
+    this.load.image("ellis", "/assets/Images/png-1.png");
+    this.load.image("thomas", "/assets/Images/npc-2.png");
+    this.load.image("jelly", "/assets/Images/jelly.png");
+    this.load.image("nicole", "/assets/Images/gizmo-karen-jellyfisher.png");
+    this.load.image("badwindow", "/assets/Images/dystopic-world.png");
     this.load.image("goodwindow", "/assets/Images/goodwindow.png");
   }
 
