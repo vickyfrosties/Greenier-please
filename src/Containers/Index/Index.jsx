@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
-import styles from './Index.module.css';
-import { useEffect } from 'react';
-import { killgame } from '../Game/Game';
+import { Link } from "react-router-dom";
+import styles from "./Index.module.css";
+import { useEffect } from "react";
+import { killgame } from "../Game/Game";
 
 const Index = () => {
   useEffect(() => {
-    const GAME_CANVA = document.querySelector('canvas');
+    const GAME_CANVA = document.querySelector("canvas");
     killgame();
   }, []);
   return (
@@ -27,8 +27,8 @@ const Index = () => {
           </p>
         </div>
 
-        <Link to='/game' className={styles.btnplay}>
-          <img src='./src/assets/Images/PlayButton.png' alt='Button Play Game' />
+        <Link to="/game" className={styles.btnplay}>
+          <img src="/Images/PlayButton.png" alt="Button Play Game" />
         </Link>
       </section>
     </>
