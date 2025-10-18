@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import data from '../../assets/propositions.json';
-import styles from './DivInfo.module.css';
+import { useState } from "react";
+import data from "../../../public/assets/propositions.json";
+import styles from "./DivInfo.module.css";
 const DivInfo = () => {
   //todo : récupérer les infos du json
   const projects = data.projets;
   //todo : récupérer les infos du bouton dans le local storage
-  console.log('clickCount ' + parseInt(localStorage.getItem('clickCount')));
+  console.log("clickCount " + parseInt(localStorage.getItem("clickCount")));
   // console.log(Object.keys(localStorage) + ': ' + Object.values(localStorage));
 
   const [count, setCount] = useState(null);
@@ -42,7 +42,6 @@ const DivInfo = () => {
     <>
       {/* <h2 className={styles.subjectname}>Information</h2> */}
       <section className={styles.divinfo_container}>
-
         <div className={styles.divcontainer}>
           {projects.map((projet, index) => {
             return (
@@ -60,9 +59,7 @@ const DivInfo = () => {
             );
           })}
         </div>
-
       </section>
-
     </>
   );
 };
