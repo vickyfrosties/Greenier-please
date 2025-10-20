@@ -29,7 +29,10 @@ const About = () => {
               href="https://github.com/roze-olifant"
               target="blank"
             >
-              <img src="/assets/icons/github-logo.svg" alt="Github Profile" />
+              <img
+                src="/public/assets/icons/github-logo.svg"
+                alt="Github Profile"
+              />
             </a>
             <a
               className={styles.socialnetwork}
@@ -37,7 +40,7 @@ const About = () => {
               target="blank"
             >
               <img
-                src="/assets/icons/linkedin-logo.svg"
+                src="/public/assets/icons/linkedin-logo.svg"
                 alt="LinkedIn Profile"
               />
             </a>
@@ -58,7 +61,10 @@ const About = () => {
               href="https://github.com/MamieNuf"
               target="blank"
             >
-              <img src="/assets/icons/github-logo.svg" alt="Github Profile" />
+              <img
+                src="/public/assets/icons/github-logo.svg"
+                alt="Github Profile"
+              />
             </a>
             <a
               className={styles.socialnetwork}
@@ -66,7 +72,7 @@ const About = () => {
               target="blank"
             >
               <img
-                src="/assets/icons/linkedin-logo.svg"
+                src="/public/assets/icons/linkedin-logo.svg"
                 alt="LinkedIn Profile"
               />
             </a>
@@ -87,7 +93,10 @@ const About = () => {
               href="https://github.com/Gweny526"
               target="blank"
             >
-              <img src="/assets/icons/github-logo.svg" alt="Github Profile" />
+              <img
+                src="/public/assets/icons/github-logo.svg"
+                alt="Github Profile"
+              />
             </a>
             <a
               className={styles.socialnetwork}
@@ -95,7 +104,7 @@ const About = () => {
               target="blank"
             >
               <img
-                src="/assets/icons/linkedin-logo.svg"
+                src="/public/assets/icons/linkedin-logo.svg"
                 alt="LinkedIn Profile"
               />
             </a>
@@ -116,7 +125,10 @@ const About = () => {
               href="https://github.com/belynnn"
               target="blank"
             >
-              <img src="/assets/icons/github-logo.svg" alt="Github Profile" />
+              <img
+                src="/public/assets/icons/github-logo.svg"
+                alt="Github Profile"
+              />
             </a>
             <a
               className={styles.socialnetwork}
@@ -124,7 +136,7 @@ const About = () => {
               target="blank"
             >
               <img
-                src="/assets/icons/linkedin-logo.svg"
+                src="/public/assets/icons/linkedin-logo.svg"
                 alt="LinkedIn Profile"
               />
             </a>
@@ -145,7 +157,10 @@ const About = () => {
               target="blank"
               href="https://github.com/Blacg13"
             >
-              <img src="/assets/icons/github-logo.svg" alt="Github Profile" />
+              <img
+                src="/public/assets/icons/github-logo.svg"
+                alt="Github Profile"
+              />
             </a>
             <a
               className={styles.socialnetwork}
@@ -153,7 +168,7 @@ const About = () => {
               target="blank"
             >
               <img
-                src="/assets/icons/linkedin-logo.svg"
+                src="/public/assets/icons/linkedin-logo.svg"
                 alt="LinkedIn Profile"
               />
             </a>
@@ -174,7 +189,10 @@ const About = () => {
               href="https://github.com/vickyfrosties"
               target="blank"
             >
-              <img src="/assets/icons/github-logo.svg" alt="Github Profile" />
+              <img
+                src="/public/assets/icons/github-logo.svg"
+                alt="Github Profile"
+              />
             </a>
             <a
               className={styles.socialnetwork}
@@ -182,7 +200,7 @@ const About = () => {
               target="blank"
             >
               <img
-                src="/assets/icons/linkedin-logo.svg"
+                src="/public/assets/icons/linkedin-logo.svg"
                 alt="LinkedIn Profile"
               />
             </a>
@@ -203,7 +221,7 @@ const About = () => {
               target="blank"
             >
               <img
-                src="/assets/icons/linkedin-logo.svg"
+                src="/public/assets/icons/linkedin-logo.svg"
                 alt="LinkedIn Profile"
               />
             </a>
@@ -224,7 +242,7 @@ const About = () => {
               target="blank"
             >
               <img
-                src="/assets/icons/linkedin-logo.svg"
+                src="/public/assets/icons/linkedin-logo.svg"
                 alt="LinkedIn Profile"
               />
             </a>

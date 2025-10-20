@@ -8,7 +8,10 @@ const Navbar = () => {
       {location.pathname !== "/" && (
         <li>
           <Link to="">
-            <img src="/assets/icons/house-line.svg" alt="Home page logo" />
+            <img
+              src="/public/assets/icons/house-line.svg"
+              alt="Home page logo"
+            />
             <p>Home</p>
           </Link>
         </li>
@@ -16,7 +19,10 @@ const Navbar = () => {
       {location.pathname !== "/game" && (
         <li hidden={false}>
           <Link to="/game">
-            <img src="/assets/icons/game-controller.svg" alt="Game page logo" />
+            <img
+              src="/public/assets/icons/game-controller.svg"
+              alt="Game page logo"
+            />
             <p>Game</p>
           </Link>
         </li>
@@ -24,7 +30,7 @@ const Navbar = () => {
       {location.pathname !== "/info" && (
         <li hidden={false}>
           <Link to="/info">
-            <img src="/assets/icons/question.svg" alt="Info page logo" />
+            <img src="/public/assets/icons/question.svg" alt="Info page logo" />
             <p>Info</p>
           </Link>
         </li>
@@ -32,7 +38,7 @@ const Navbar = () => {
       {location.pathname !== "/about" && (
         <li hidden={false}>
           <Link className={style.links} to="/about">
-            <img src="/assets/icons/info.svg" alt="About us page logo" />
+            <img src="/public/assets/icons/info.svg" alt="About us page logo" />
             <p>About us</p>
           </Link>
         </li>
