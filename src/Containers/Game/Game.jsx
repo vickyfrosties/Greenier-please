@@ -105,9 +105,9 @@ const Game = () => {
 
   // Définition des fonctions Phaser ./Game.module.css
   function preload() {
-    this.load.image("background", "/assets/images/backgroun.png");
+    this.load.image("background", "/assets/images/background.png");
     this.load.image("buttonaccept", "/assets/images/accept-button.png");
-    this.load.json("gameData", "/assets/propositions.json");
+    this.load.json("gameData", "/src/data/propositions.json");
     this.load.image("paper", "/assets/images/paper.png");
     this.load.image("closeup", "/assets/images/postit.png");
     this.load.image("winscreen", "/assets/images/win-screen.png");
