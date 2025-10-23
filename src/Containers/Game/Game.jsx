@@ -107,7 +107,7 @@ const Game = () => {
   function preload() {
     this.load.image("background", "/assets/images/background.png");
     this.load.image("buttonaccept", "/assets/images/accept-button.png");
-    this.load.json("gameData", "/propositions.json");
+    this.load.json("gameData", "/data/propositions.json");
     this.load.image("paper", "/assets/images/paper.png");
     this.load.image("closeup", "/assets/images/postit.png");
     this.load.image("winscreen", "/assets/images/win-screen.png");
