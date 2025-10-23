@@ -1,6 +1,7 @@
 import styles from "./About.module.css";
 import { useEffect } from "react";
 import { killgame } from "../Game/Game.jsx";
+import githubLogo from "../assets/icons/github-logo.svg";
 
 const About = () => {
   useEffect(() => {
@@ -29,7 +30,7 @@ const About = () => {
               href="https://github.com/roze-olifant"
               target="blank"
             >
-              <img src="/assets/icons/github-logo.svg" alt="Github Profile" />
+              <img src={githubLogo} alt="Github Profile" />
             </a>
             <a
               className={styles.socialnetwork}
