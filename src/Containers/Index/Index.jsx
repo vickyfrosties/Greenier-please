@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import styles from "./Index.module.css";
 import { useEffect } from "react";
 import { killgame } from "../Game/Game";
-import playButton from "../../../public/assets/images/play-button.png";
 
 const Index = () => {
   useEffect(() => {
@@ -29,7 +28,7 @@ const Index = () => {
         </div>
 
         <Link to="/game" className={styles.btnplay}>
-          <img src={playButton} alt="Button Play Game" />
+          <img src="/play-button.png" alt="Button Play Game" />
         </Link>
       </section>
     </>
