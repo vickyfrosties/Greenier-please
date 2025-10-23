@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import data from "../../../public/assets/propositions.json";
-import data from "../../data/propositions.json";
+import data from "../../../public/data/propositions.json";
 import styles from "./DivInfo.module.css";
 
 const DivInfo = () => {
