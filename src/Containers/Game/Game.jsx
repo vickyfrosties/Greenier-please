@@ -108,7 +108,7 @@ const Game = () => {
     this.load.image("background", "/assets/Images/background.png");
     this.load.image("buttonaccept", "/assets/Images/accept-button.png");
     this.load.json("gameData", "/data/propositions.json");
-    this.load.image("paper", "/assets/Images/paper.png");
+    this.load.image("paper", "/assets/Images/Paper.png");
     this.load.image("closeup", "/assets/Images/postit.png");
     this.load.image("winscreen", "/assets/Images/win-screen.png");
     this.load.image("lostscreen", "/assets/Images/game-over-screen.png");
@@ -118,7 +118,7 @@ const Game = () => {
     this.load.image("neutralwindow", "/assets/Images/neutral-window.png");
     this.load.image("ellis", "/assets/Images/png-1.png");
     this.load.image("thomas", "/assets/Images/npc-2.png");
-    this.load.image("jelly", "/assets/Images/jelly.png");
+    this.load.image("jelly", "/assets/Images/Jelly.png");
     this.load.image("nicole", "/assets/Images/gizmo-karen-jellyfisher.png");
     this.load.image("badwindow", "/assets/Images/dystopic-world.png");
     this.load.image("goodwindow", "/assets/Images/goodwindow.png");
@@ -149,10 +149,9 @@ const Game = () => {
     afficherProjetEtOperateur(); // Appelez ici
 
     // Assurez-vous que les données sont correctement chargées
-    if (data && data.projets && data.projets.length > 0) {
-      return <p>Game is about to start.</p>;
-    } else {
-      console.error("Aucune donnée de projet trouvée.");
+    if (!data || !data.projets) {
+      console.error("No game data found");
+      return;
     }
   }
 
